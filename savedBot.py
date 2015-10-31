@@ -12,8 +12,8 @@ while login == False:
     username = str(input('Username: '))
 
     # Password input
-    # If script is executed in a TTY, the password is read using "getpass", which suppresses the echo of the input to
-    # stdout (i.e. hides it from the screen.) Some IDEs don't use a TTY to execute code, therefor need input() instead.
+    # If script is executed in a TTY, the password is read using "getpass" which suppresses the echo of the password
+    # to stdout (i.e. hides it from the screen.) Some IDEs don't use a TTY to run code, so this will default to input().
     if sys.stdin.isatty():
         password = getpass.getpass()
     else:
@@ -70,7 +70,7 @@ for post in saved:
         saved_type['Text'] += 1
 
 
-# Create the ASCII tables using "PrettyTables"
+# Create the ASCII tables with "PrettyTables"
 sub_table = PrettyTable(['Subreddit', 'Saved Posts'])
 type_table = PrettyTable(['Type', 'Saves'])
 
